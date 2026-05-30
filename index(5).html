@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오영삼 교수 | 사회복지학 · AI · 노인건강</title>
+  <meta name="description" content="국립부경대학교 사회복지학 교수 오영삼의 연구, 강의, 논문, 블로그를 소개하는 개인 홈페이지입니다." />
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #1d4ed8;
+      --primary-dark: #1e40af;
+      --line: #e5e7eb;
+      --soft: #eff6ff;
+      --accent: #0f766e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: 20px;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .menu {
+      display: flex;
+      gap: 18px;
+      font-size: 15px;
+      color: var(--muted);
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .menu a:hover {
+      color: var(--primary);
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .hero {
+      padding: 84px 0 64px;
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--primary-dark);
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1.12;
+      letter-spacing: -0.06em;
+    }
+
+    .lead {
+      margin: 24px 0 0;
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      background: var(--card);
+    }
+
+    .btn.primary {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      transition: 0.2s ease;
+    }
+
+    .profile-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+    }
+
+    .photo-placeholder {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #dbeafe, #f0fdfa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-dark);
+      font-size: 56px;
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      margin-bottom: 20px;
+    }
+
+    .profile-card h2 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: -0.04em;
+    }
+
+    .profile-card p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 56px 0;
+    }
+
+    .section-title {
+      margin-bottom: 24px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 32px;
+      letter-spacing: -0.05em;
+    }
+
+    .section-title p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      min-height: 180px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      letter-spacing: -0.03em;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+    }
+
+    .card ul {
+      padding-left: 20px;
+      margin: 10px 0 0;
+    }
+
+    .wide {
+      grid-column: span 2;
+    }
+
+    .tag-list {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #f3f4f6;
+      color: #374151;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-item {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px 20px;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 16px;
+    }
+
+    .date {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .blog-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .post {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .post h3 {
+      margin: 0 0 6px;
+    }
+
+    .post p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .contact {
+      background: #111827;
+      color: white;
+      border-radius: 28px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .contact p {
+      color: #d1d5db;
+    }
+
+    .contact a {
+      color: #bfdbfe;
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 36px 0 48px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 860px) {
+      .hero, .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .wide {
+        grid-column: span 1;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .menu {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <a class="logo" href="#top">오영삼<span>.</span></a>
+      <div class="menu">
+        <a href="#about">소개</a>
+        <a href="#research">연구</a>
+        <a href="#publications">논문</a>
+        <a href="#teaching">강의</a>
+        <a href="#blog">블로그</a>
+        <a href="#contact">연락처</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">국립부경대학교 사회복지학 교수</div>
+        <h1>사회복지, 건강정보, AI를 연결해 지역사회의 변화를 연구합니다.</h1>
+        <p class="lead">
+          저는 노인건강, 건강정보, 지방재정, 지역사회, AI 활용을 중심으로 사회복지의 실천적 가능성을 연구합니다. 이 홈페이지는 연구와 강의, 글쓰기, 협업 기록을 모아두는 공간입니다.
+        </p>
+        <div class="buttons">
+          <a class="btn primary" href="#research">연구 분야 보기</a>
+          <a class="btn" href="#blog">블로그 읽기</a>
+          <a class="btn" href="#contact">연락하기</a>
+        </div>
+      </div>
+
+      <aside class="profile-card">
+        <div class="photo-placeholder">YS</div>
+        <h2>오영삼 교수</h2>
+        <p>국립부경대학교 사회복지학</p>
+        <p>AI · 건강정보 · 노인건강 · 지역사회</p>
+      </aside>
+    </section>
+
+    <section id="about">
+      <div class="section-title">
+        <h2>소개</h2>
+        <p>연구자, 교육자, 지역사회와 함께하는 사회복지학자로서의 소개입니다.</p>
+      </div>
+      <div class="grid">
+        <article class="card wide">
+          <h3>About Me</h3>
+          <p>
+            저는 사회복지학의 관점에서 건강, 정보, 기술, 지역사회의 관계를 탐구합니다. 특히 고령사회에서 사람들이 더 나은 삶을 살아가도록 돕는 제도와 실천, 그리고 AI와 디지털 기술의 활용 가능성에 관심을 둡니다.
+          </p>
+        </article>
+        <article class="card">
+          <h3>소속</h3>
+          <p>국립부경대학교<br />사회복지학 전공</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="section-title">
+        <h2>연구 분야</h2>
+        <p>현재 관심을 두고 있는 주요 연구 주제입니다.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>노인건강</h3>
+          <p>고령자의 건강, 돌봄, 삶의 질, 지역사회 기반 지원체계를 연구합니다.</p>
+          <div class="tag-list">
+            <span class="tag">Aging</span>
+            <span class="tag">Health</span>
+            <span class="tag">Care</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>건강정보</h3>
+          <p>건강정보 접근성, 정보격차, 디지털 건강역량을 사회복지 관점에서 분석합니다.</p>
+          <div class="tag-list">
+            <span class="tag">Health Literacy</span>
+            <span class="tag">Information</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>AI와 사회복지</h3>
+          <p>AI가 사회복지 연구, 교육, 실천에 가져올 변화를 탐색합니다.</p>
+          <div class="tag-list">
+            <span class="tag">AI</span>
+            <span class="tag">Welfare Tech</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>지방재정</h3>
+          <p>지역사회 복지정책과 지방재정의 관계를 분석합니다.</p>
+        </article>
+        <article class="card">
+          <h3>지역사회</h3>
+          <p>지역사회 문제를 주민의 경험과 제도적 맥락 속에서 이해합니다.</p>
+        </article>
+        <article class="card">
+          <h3>질적 연구</h3>
+          <p>포토보이스와 참여적 연구방법을 활용해 현장의 목소리를 드러냅니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="section-title">
+        <h2>논문 · 연구</h2>
+        <p>대표 논문과 연구 성과를 정리하는 공간입니다. 실제 목록으로 교체해 사용하세요.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="date">2026</div>
+          <div>
+            <strong>AI와 사회복지 교육의 변화</strong>
+            <p>AI 도구가 사회복지 교육과 연구 과정에 미치는 영향을 다룬 연구.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2025</div>
+          <div>
+            <strong>노인 건강정보 접근성과 지역사회 지원</strong>
+            <p>고령자의 건강정보 이용 경험과 지원체계를 분석한 연구.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2024</div>
+          <div>
+            <strong>포토보이스 기반 지역사회 연구</strong>
+            <p>참여자의 사진과 서사를 통해 지역사회 경험을 해석한 연구.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <div class="section-title">
+        <h2>강의</h2>
+        <p>학생들과 함께 공부하는 주요 과목과 학습 주제입니다.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>사회복지조사론</h3>
+          <p>사회복지 연구문제, 자료수집, 분석, 연구윤리를 다룹니다.</p>
+        </article>
+        <article class="card">
+          <h3>지역사회복지론</h3>
+          <p>지역사회 문제와 복지 실천, 정책, 주민참여를 학습합니다.</p>
+        </article>
+        <article class="card">
+          <h3>AI와 사회복지</h3>
+          <p>AI 시대의 사회복지 연구와 실천 가능성을 함께 탐구합니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="blog">
+      <div class="section-title">
+        <h2>블로그</h2>
+        <p>연구노트, 강의 메모, AI 활용 기록, 사회복지 이슈를 공유합니다.</p>
+      </div>
+      <div class="blog-list">
+        <article class="post">
+          <h3>AI는 사회복지 연구를 어떻게 바꿀까?</h3>
+          <p>문헌정리, 자료분석, 글쓰기 과정에서 AI를 활용하는 방법을 정리합니다.</p>
+        </article>
+        <article class="post">
+          <h3>건강정보 격차와 노인복지</h3>
+          <p>건강정보 접근성이 고령자의 일상과 복지 이용에 미치는 영향을 살펴봅니다.</p>
+        </article>
+        <article class="post">
+          <h3>포토보이스 연구를 준비하며</h3>
+          <p>참여자의 시선으로 지역사회 경험을 기록하는 연구방법을 소개합니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact">
+        <div>
+          <h2>Contact</h2>
+          <p>연구 협업, 강의, 자문, 학술 교류와 관련해 연락하실 수 있습니다.</p>
+        </div>
+        <div>
+          <p><strong>소속</strong><br />국립부경대학교 사회복지학</p>
+          <p><strong>이메일</strong><br /><a href="mailto:oys503@pknu.ac.kr">oys503@pknu.ac.kr</a></p>
+          <p><strong>링크</strong><br />Google Scholar · ORCID · GitHub 링크를 추가하세요.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 오영삼. Built with GitHub Pages.
+  </footer>
+</body>
+</html>
