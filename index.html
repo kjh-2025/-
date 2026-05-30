@@ -16,10 +16,16 @@
       --line: #e5e7eb;
       --soft: #eff6ff;
       --accent: #0f766e;
+      --accent-soft: #ecfdf5;
+      --warning-soft: #fff7ed;
     }
 
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -39,7 +45,7 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
@@ -285,6 +291,121 @@
       color: var(--muted);
     }
 
+    .stats-section {
+      background: linear-gradient(135deg, #ffffff, #f0fdfa);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+    }
+
+    .stats-summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 24px 0;
+    }
+
+    .stat-box {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .stat-box span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .stat-box strong {
+      font-size: 28px;
+      letter-spacing: -0.04em;
+    }
+
+    .insight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .insight {
+      background: var(--accent-soft);
+      border: 1px solid #bbf7d0;
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .insight.warning {
+      background: var(--warning-soft);
+      border-color: #fed7aa;
+    }
+
+    .insight h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .insight p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 840px;
+    }
+
+    th, td {
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    th:first-child, td:first-child {
+      text-align: left;
+      font-weight: 800;
+    }
+
+    th {
+      background: #f9fafb;
+      color: #374151;
+      font-size: 14px;
+    }
+
+    td {
+      font-size: 15px;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .source-note {
+      margin-top: 14px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .source-note a {
+      color: var(--primary);
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
     .contact {
       background: #111827;
       color: white;
@@ -328,7 +449,7 @@
         grid-template-columns: 1fr;
       }
 
-      .grid {
+      .grid, .stats-summary, .insight-grid {
         grid-template-columns: 1fr;
       }
 
@@ -348,6 +469,10 @@
       .menu {
         justify-content: flex-start;
       }
+
+      .stats-section {
+        padding: 22px;
+      }
     }
   </style>
 </head>
@@ -358,6 +483,7 @@
       <div class="menu">
         <a href="#about">소개</a>
         <a href="#research">연구</a>
+        <a href="#volunteer-stats">자원봉사 통계</a>
         <a href="#publications">논문</a>
         <a href="#teaching">강의</a>
         <a href="#blog">블로그</a>
@@ -376,7 +502,7 @@
         </p>
         <div class="buttons">
           <a class="btn primary" href="#research">연구 분야 보기</a>
-          <a class="btn" href="#blog">블로그 읽기</a>
+          <a class="btn" href="#volunteer-stats">자원봉사 통계 보기</a>
           <a class="btn" href="#contact">연락하기</a>
         </div>
       </div>
@@ -451,6 +577,141 @@
           <h3>질적 연구</h3>
           <p>포토보이스와 참여적 연구방법을 활용해 현장의 목소리를 드러냅니다.</p>
         </article>
+      </div>
+    </section>
+
+    <section id="volunteer-stats">
+      <div class="stats-section">
+        <div class="section-title">
+          <h2>1365 자원봉사 연령별 통계</h2>
+          <p>1365 자원봉사포털의 2025년 인구대비 현황 자료를 연구와 강의 참고자료 형태로 정리했습니다.</p>
+        </div>
+
+        <div class="stats-summary">
+          <div class="stat-box">
+            <span>인구합계</span>
+            <strong>51,117,378명</strong>
+          </div>
+          <div class="stat-box">
+            <span>등록인원 합계</span>
+            <strong>15,809,568명</strong>
+          </div>
+          <div class="stat-box">
+            <span>활동인원 합계</span>
+            <strong>2,194,155명</strong>
+          </div>
+        </div>
+
+        <div class="insight-grid">
+          <div class="insight">
+            <h3>20대 등록률 91%</h3>
+            <p>20대는 등록인원이 5,162,513명으로 가장 크고, 등록률도 가장 높습니다.</p>
+          </div>
+          <div class="insight">
+            <h3>10대 미만 활동률 41%</h3>
+            <p>등록자 대비 활동인원 비율은 10대 미만에서 가장 높게 나타납니다.</p>
+          </div>
+          <div class="insight warning">
+            <h3>30대 활동률 6%</h3>
+            <p>30대는 등록률 44%에 비해 활동률이 낮아 참여 지속성 논의가 필요합니다.</p>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>연령</th>
+                <th>인구</th>
+                <th>등록인원</th>
+                <th>활동인원</th>
+                <th>인구대비율</th>
+                <th>등록률</th>
+                <th>활동률</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>10대 미만</td>
+                <td>2,959,223</td>
+                <td>45,688</td>
+                <td>18,633</td>
+                <td>6%</td>
+                <td>2%</td>
+                <td>41%</td>
+              </tr>
+              <tr>
+                <td>10대</td>
+                <td>4,628,343</td>
+                <td>1,336,393</td>
+                <td>361,209</td>
+                <td>9%</td>
+                <td>29%</td>
+                <td>27%</td>
+              </tr>
+              <tr>
+                <td>20대</td>
+                <td>5,682,242</td>
+                <td>5,162,513</td>
+                <td>619,074</td>
+                <td>11%</td>
+                <td>91%</td>
+                <td>12%</td>
+              </tr>
+              <tr>
+                <td>30대</td>
+                <td>6,676,457</td>
+                <td>2,946,016</td>
+                <td>167,639</td>
+                <td>13%</td>
+                <td>44%</td>
+                <td>6%</td>
+              </tr>
+              <tr>
+                <td>40대</td>
+                <td>7,582,212</td>
+                <td>1,634,774</td>
+                <td>262,702</td>
+                <td>15%</td>
+                <td>22%</td>
+                <td>16%</td>
+              </tr>
+              <tr>
+                <td>50대</td>
+                <td>8,634,072</td>
+                <td>2,069,709</td>
+                <td>324,066</td>
+                <td>17%</td>
+                <td>24%</td>
+                <td>16%</td>
+              </tr>
+              <tr>
+                <td>60대</td>
+                <td>7,922,278</td>
+                <td>1,532,996</td>
+                <td>315,585</td>
+                <td>15%</td>
+                <td>19%</td>
+                <td>21%</td>
+              </tr>
+              <tr>
+                <td>70대 이상</td>
+                <td>7,032,551</td>
+                <td>1,081,479</td>
+                <td>125,247</td>
+                <td>14%</td>
+                <td>15%</td>
+                <td>12%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="source-note">
+          기준일자: 인구 2025.12.31, 등록활동 2025.12.31. 
+          용어: 등록인원은 조회년도까지 자원봉사자로 등록된 인원수, 활동인원은 조회년도에 1회 이상 자원봉사에 참여한 인원수입니다.
+          자료 출처: <a href="https://www.1365.go.kr/vols/1472177522467/srvcgud/volsStats.do?titleNm=(%EC%97%B0%EB%A0%B9%EB%B3%84)" target="_blank" rel="noopener">1365 자원봉사포털 인구대비 현황(연령별)</a>
+        </p>
       </div>
     </section>
 
